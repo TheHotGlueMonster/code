@@ -9,13 +9,25 @@
 
     <body>
         <script>
-            for (let i = 0; i < 10; i++) {
-                saySomething();
+            function stopWatch(){
+                var startTime = Date.now();
+
+                function getDelay(){
+                    var elapsedTime = Date.now() - startTime;
+                    alert(elapsedTime);
+                }
+
+                return getDelay;
             }
 
-            function saySomething(){
-                document.writeln("Hello!"); //hi
+            let timer = stopWatch();
+            
+            //Сделать что-нибудь за некоторое время.
+            for (let i = 0;i < 10000000; i++){
+                let foo = Math.random() * 10000;
             }
-         </script>
+
+            timer();
+        </script>
     </body>
 </html>
